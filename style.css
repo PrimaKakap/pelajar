@@ -23,23 +23,24 @@ nav {
 
 .logo {
     width: 50%;
+    display: flex;
+    align-items: center;
 }
 
 .logo a {
- color: #f5f5f5;
- font-size: 24px;
- text-decoration: none;
- font-weight: bold;
- margin: 0 16px;
- display: flex;
- align-items: center;
+    color: #f5f5f5;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 16px;
+    display: flex;
+    align-items: center;
 }
 
 .logo a img {
     width: 56px;
     height: 56px;
     margin-right: 10px;
-
 }
 
 .nav-link {
@@ -54,10 +55,84 @@ nav {
     color: #b5b5b5;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s;
 }
 
 .nav-link a:hover {
     color: #f5f5f5;
+}
+
+/* Navbar Responsif */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 16px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: #050505;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s;
+        padding: 20px 0;
+        z-index: 4;
+    }
+    
+    .nav-container.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-link a {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .logo {
+        width: auto;
+    }
 }
 
 /*Hero Section*/
@@ -116,16 +191,14 @@ nav {
     color: #050505;
 }
 
-/*Division Section Style*/
-.divisi {
-    margin-bottom: 100px;
-}
+
+
 
 .title {
     font-weight: 800;
     font-size: 35px;
     color: #050505;
-    padding-top: 80px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -137,7 +210,7 @@ nav {
     color: #050505;
     width: 50%;
     text-align: center;
-}
+} 
 
 .divisi-utama {
     width: 100%;
@@ -147,74 +220,82 @@ nav {
     flex-wrap: wrap;
 }
 
-.card-divisi {
-    border: 2px solid #f5f5f5;
-    border-radius: 10px;
-    background-color: #050505;
-    text-align: center;
-    flex-direction: column;
+/* card start */
+
+body {
+    background-color: #f5f5f5;
+}
+
+.cards-container {
     display: flex;
-    margin-bottom: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 49%;
-    height: 49%;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.card-divisi a {
-    text-decoration: none;
-    color: #f5f5f5;
+.card {
+    width: calc(25% - 20px);
+    min-width: 250px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-.logo-divisi {
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-    color: #f5f5f5;
-    font-size: 32px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.nama-divisi h4, h5 {
-    height: 40px;
+.card-content {
+    padding: 20px;
 }
 
-.nama-divisi {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    font-weight: 500;
-    color: #f5f5f5;
-    padding-inline: 10px;
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
 }
 
-.nama-divisi p {
-    font-size: 15px;
+.card-description {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
 }
 
-.card-divisi:hover {
-    transform: scale(1.05);
-    transition: all .3 ease-in-out;
+@media (max-width: 1024px) {
+    .card {
+        width: calc(50% - 20px);
+    }
 }
 
-/*Proker Section Style*/
-.proker {
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/*Latihan Section Style*/
+.jadwal {
     padding-top: 20%;
     margin-bottom: 30px;
-}
-
-.proker-utama {
-    display: flex;
-    justify-content: space-around;
-}
-
-.card-proker {
-    color: #050505;
-    width: 360px;
-    position: relative;
-    padding: 20px;  
 }
 
 /* Responsive Styles*/
@@ -364,4 +445,103 @@ footer {
 
 .tombol-item img:hover {
     transform: scale(1.05);
+}
+
+ol {
+  list-style-type: disc; 
+}
+
+/*jadwal*/
+
+.schedule-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.schedule-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 600px) {
+    .schedule-container {
+        padding: 0 10px;
+    }
+    
+    .schedule-img {
+        border-radius: 10px;
+    }
+}
+
+/* Style untuk gambar jadwal */
+.schedule-container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 20px 0;
+    cursor: zoom-in;
+}
+
+.schedule-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Modal untuk zoom */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    cursor: zoom-out;
+}
+
+.modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .modal-content {
+        max-width: 95%;
+    }
+    
+    .close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
 }
