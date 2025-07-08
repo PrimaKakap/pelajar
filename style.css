@@ -545,3 +545,126 @@ ol {
         right: 20px;
     }
 }
+
+/* css team Kami section */
+.team-slider-wrapper {
+    width: 100%;
+    max-width: 1100px; /* pas 4 kartu @275px */
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  
+  .team-slider-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+  }
+  
+  .team-card {
+    flex: 0 0 250px; /* width tetap 250px */
+    max-width: 250px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .team-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: block;
+  }
+  
+  /* Tombol navigasi panah */
+  .team-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .team-left-btn {
+    left: 0;
+  }
+  
+  .team-right-btn {
+    right: 0;
+  }
+  
+  /* RESPONSIF MOBILE - 2 gambar */
+  @media (max-width: 768px) {
+    .team-card {
+      flex: 0 0 45%;
+      max-width: 45%;
+    }
+  }
+  
+  .profile-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.profile-text h1 {
+  font-size: 48px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.profile-text h2 {
+  font-size: 24px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.profile-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.profile-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.profile-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+

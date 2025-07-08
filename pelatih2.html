@@ -3,9 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Latihan</title>
+    <title>Ronald</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Screenshot 2025-05-20 073619.png">
+    <style>
+        .profile-section {
+          padding: 80px 20px;
+          background-color: #f9f9f9;
+        }
+    
+        .profile-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 40px;
+          flex-wrap: wrap;
+        }
+    
+        .profile-text {
+          flex: 1;
+          min-width: 300px;
+        }
+    
+        .profile-text h1 {
+          font-size: 48px;
+          color: #111;
+          margin-bottom: 10px;
+        }
+    
+        .profile-text h2 {
+          font-size: 24px;
+          color: #888;
+          margin-bottom: 20px;
+        }
+    
+        .profile-text p {
+          font-size: 18px;
+          line-height: 1.6;
+          color: #333;
+        }
+    
+        .profile-image {
+          flex: 1;
+          min-width: 300px;
+          text-align: center;
+        }
+    
+        .profile-image img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 12px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+    
+        @media (max-width: 768px) {
+          .profile-container {
+            flex-direction: column;
+            text-align: center;
+          }
+    
+          .profile-text h1 {
+            font-size: 36px;
+          }
+    
+          .profile-text h2 {
+            font-size: 20px;
+          }
+    
+          .profile-text p {
+            font-size: 16px;
+          }
+        }
+      </style>
+
 </head>
 <body>
     <!--Navbar Begin-->    
@@ -35,30 +107,26 @@
     </div>
 </nav>
     <!--Navbar end--> 
-    
-<section style="padding-top: 100px; margin-left: 20px;">
-    <h3 style="padding-bottom: 15px;">JADWAL LATIHAN MINGGUAN</h3>
-    <p>adalah rencana sistematis kami yang membagi latihan dalam seminggu, membantu anda mencapai tujuan membentuk otot lebih cepat dan efisien. memiliki banyak kelebihan seperti memberikan struktur yang jelas, membantu pemulihan otot dengan baik, memungkinkan kemajuan yang terukur, serta bisa disesuaikan dengan tujuan spesifik seperti bulking atau cutting. Namun, jadwal ini juga memiliki kekurangan, seperti kurang fleksibel bagi orang dengan jadwal harian yang tidak menentu, membutuhkan kedisiplinan tinggi untuk konsistensi, serta berisiko menyebabkan overtraining jika tidak dirancang dengan tepat.</p>
-    <div style="height: 30px;">
-    </div>
-</section>
 
-<div class="schedule-container">
-    <img id="scheduleImage" class="schedule-img" src="Latihan-Mingguan.png" alt="Jadwal Latihan Mingguan">
-</div>
-
-<!-- selection zoom out in -->
-<div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="zoomedImage">
-</div>
-
-<section>
-    <p style="padding-top: 30px;margin-left: 20px"> Latihan diatas dirancang untuk mencapai hasil kebugaran dan pembentukan otot secara efisien. Dengan pembagian waktu yang tepat dan program yang terstruktur, latihan menjadi lebih terarah dan terukur. Meskipun menuntut kedisiplinan dan tidak selalu fleksibel, kelebihannya dalam membangun progres jangka panjang menjadikannya strategi yang sangat efektif terutama bagi mereka yang punya tujuan dan komitmen yang jelas dalam dunia fitness.</p>
-    <div style="height: 30px;">
-    </div>
-</section>
-
+    <section class="profile-section">   
+        <div class="profile-container">
+          <div class="profile-text">
+            <h1>Ronald</h1>
+            <h2>Personal Trainer BALIFIT</h2>
+            <p>
+              Ronald adalah pelatih pribadi berpengalaman di BALIFIT yang dikenal karena pendekatannya yang disiplin namun suportif. Ia menggabungkan metode latihan modern dengan dasar ilmu kebugaran untuk memberikan hasil nyata bagi setiap individu — mulai dari pemula hingga atlet berpengalaman.
+            </p>
+             <br>
+             <p>
+              Dengan fokus pada kekuatan otot, pembakaran lemak, serta perbaikan postur dan fleksibilitas, Ronald tidak hanya melatih fisik, tetapi juga membangun mental juara dalam diri kliennya. Komitmennya pada hasil dan kesehatan jangka panjang menjadikannya salah satu pelatih yang paling dipercaya di BALIFIT.
+            </p>
+          </div>
+          <div class="profile-image">
+            <img src="Ronald2.png"/>
+          </div>
+        </div>
+      </section>
+      
         <!--Footer Begin-->
     <footer>
     <section id="contact">
@@ -107,7 +175,7 @@ dengan berbagai jadwal, latihan, dan panduan gym yang mudah diikuti.</p>
         navContainer.classList.toggle('active');
     });
     
-    // Tutup menu ketika link diklik
+    // Tutup menu ketika link diklik (opsional)
     const navLinks = document.querySelectorAll('.nav-link a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -115,39 +183,6 @@ dengan berbagai jadwal, latihan, dan panduan gym yang mudah diikuti.</p>
             navContainer.classList.remove('active');
         });
     });
-</script>
-
-<script>
-    // elemen
-    const scheduleImg = document.getElementById('scheduleImage');
-    const modal = document.getElementById('imageModal');
-    const zoomedImg = document.getElementById('zoomedImage');
-    const closeBtn = document.getElementsByClassName('close')[0];
-
-    // on click
-    scheduleImg.onclick = function() {
-        modal.style.display = "block";
-        zoomedImg.src = this.src;
-    }
-
-    // close click
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // outside click
-    modal.onclick = function(event) {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    // Tutup modal dengan tombol ESC
-    document.onkeydown = function(event) {
-        if (event.key === "Escape") {
-            modal.style.display = "none";
-        }
-    }
 </script>
 </body>
 </html>

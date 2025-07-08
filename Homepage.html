@@ -48,6 +48,7 @@
             <a href="#home">Beranda</a>
             <a href="#divisi">Artikel</a>
             <a href="#proker">Latihan</a>
+            <a href="#pelatih">Pelatih</a>
             <a href="#contact">Hubungi</a>
         </div>
     </div>
@@ -130,8 +131,7 @@ langkah menuju gaya hidup yang lebih sehat dan aktif. Mari capai tujuan fitness 
             </a>
         </div>
     </div>
-
-
+  
 
 <!--jadwal Section Start-->
 <div class="jadwal" data-aos="zoom-out-down">
@@ -158,6 +158,49 @@ langkah menuju gaya hidup yang lebih sehat dan aktif. Mari capai tujuan fitness 
 </div>
 <!--Proker Section End-->
 
+<br id="pelatih">
+
+<!-- Team Kami Section Start -->
+<div data-aos="fade-up">
+    <h2 class="title" >Team Profesional Balifit :</h2>
+</div>
+
+
+<div class="team-slider-wrapper" data-aos="fade-up">
+    <button class="team-nav-btn team-left-btn">&#8592;</button>
+  
+    <div class="team-slider-container" id="teamSlider">
+      <div class="team-card">
+        <a href="pelatih1.html"><img src="Esa.png" alt=""></a>
+      </div>
+      <div class="team-card">
+        <a href="pelatih2.html"><img src="Ronald.png" alt=""></a>
+      </div>
+      <div class="team-card">
+        <a href="pelatih3.html"><img src="alif.png" alt=""></a>
+      </div>
+      <div class="team-card">
+        <a href="pelatih4.html"><img src="Sintia.png" alt=""></a>
+      </div>
+      <div class="team-card">
+        <a href="pelatih5.html"><img src="afrizal.png" alt=""></a>
+      </div>
+      <div class="team-card">
+        <a href="pelatih6.html"><img src="Imtiyas.png" alt=""></a>
+      </div>
+    </div>
+  
+    <button class="team-nav-btn team-right-btn">&#8594;</button>
+  </div>
+  
+  
+  
+  
+  
+<!-- Team Kami Section End -->
+
+
+
     <!--Proker Section End-->
 
     <!--Footer Begin-->
@@ -177,6 +220,7 @@ dengan berbagai jadwal, latihan, dan panduan gym yang mudah diikuti.</p>
                     <li><a href="/">Home</a></li>
                     <li><a href="#divisi">Artikel</a></li>
                     <li><a href="#proker">Jadwal Latihan</a></li>
+                    <li><a href="#pelatih">Pelatih kami</a></li>
                     <li><a href="#footer">Footer</a></li>
                 </ul>
             </div>
@@ -199,6 +243,25 @@ dengan berbagai jadwal, latihan, dan panduan gym yang mudah diikuti.</p>
     </footer>
     <!--Footer End-->
 
+<!--java script Team Kami-->
+<script>
+    const teamSlider = document.getElementById('teamSlider');
+    const leftBtn = document.querySelector('.team-left-btn');
+    const rightBtn = document.querySelector('.team-right-btn');
+  
+    leftBtn.addEventListener('click', () => {
+      teamSlider.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+  
+    rightBtn.addEventListener('click', () => {
+      teamSlider.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
+  
+    
+  
+  
+  
     <!--data aos-->
     <script>
   AOS.init();
